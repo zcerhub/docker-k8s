@@ -1,4 +1,4 @@
-# 第一部分  docker初级
+第一部分  docker初级
 
 ## 什么是容器
 
@@ -25,7 +25,7 @@
 
 ## **docker架构** 
 
-![image-20200817154845439](D:\code\docker-k8s\doc\image-20200817154845439.png)
+![image-20200817154845439](https://github.com/zcerhub/docker-k8s/raw/master/image/image-20200817154845439.png)
 
 - docker客户端和引擎 
 
@@ -2355,7 +2355,9 @@ READY列显示出没有一个pod准备好
 
 允许运行一种pod，该pod在内部进程成功结束时，不重启容器。一旦任务完成，pod就被认为处于完成状态。在发生节点故障时，该节点上由Job管理的pod将按照ReplicaSet的pod方式，重新安排到其他节点。如果进程本身异常退出（进程返回错误退出代码时），Job可以重启该容器。
 
-![image-20200814142522241](D:\比翼\铸剑行动\k8s学习文档\image-20200814142522241.png)
+![image-20200814142522241](https://github.com/zcerhub/docker-k8s/raw/master/image/image-20200814142522241.png)
+
+![Alt text](https://github.com/zcerhub/docker-k8s/raw/master/image/image-20200814142522241.png)
 
 当节点1上发生异常，被Job和RS管理的pod会被调度到节点2。Job管理的pod在任务完成后会退出，但是RS管理的pod不会退出。
 
@@ -2416,6 +2418,7 @@ job可以配置创建多个pod实例，并以并行或者串行的方式运行�
         containers:
         - name: main
           image: luksa/batch-job
+  ```
 ```
   
 job最初创建一个pod，当pod的容器运行完成时，job会创建第二个pod，以此类推，直到五个pod成功完成。
@@ -2429,7 +2432,7 @@ job最初创建一个pod，当pod的容器运行完成时，job会创建第二�
   NAME        COMPLETIONS   DURATION   AGE
   batch-job   0/5           15s        15s
 ```
-  
+
 - 并行运行
 
   同时运行多少个pod
@@ -2484,12 +2487,13 @@ job.batch/batch-job created
             containers:
             - name: main
               image: luksa/batch-job
+  ```
 ```
   
 
 cron时间表格式，从左到右依次为：分钟，小时，每月中的第几天，月，星期几。
 
-```shell
+​```shell
 [root@localhost ~]# kubectl create -f kube-cronjob.yaml
 cronjob.batch/batch-job-every-fifteen-minutes created
 ```
@@ -2508,7 +2512,7 @@ batch-job-every-fifteen-minutes   0,15,30,45 * * * *   False     1        19s   
 
 
 
-![image-20200814203748583](D:\比翼\铸剑行动\k8s学习文档\image-20200814203748583.png)
+![image-20200814203748583](https://github.com/zcerhub/docker-k8s/raw/master/image/image-20200814203748583.png)
 
 创建一个deployment时，ReplicaSet资源也随之创建。实际的pod是通过ReplicaSet进行管理的
 
@@ -2689,7 +2693,7 @@ REVISION  CHANGE-CAUSE
 deployment.apps/kubia rolled back
 ```
 
-![image-20200814214005554](D:\比翼\铸剑行动\k8s学习文档\image-20200814214005554.png)
+![image-20200814214005554](https://github.com/zcerhub/docker-k8s/raw/master/image/image-20200814214005554.png)
 
 deployment会将创建的ReplicaSet的版本记录下来，以便之后通过版本号进行回滚。
 
@@ -3140,7 +3144,7 @@ This is v1 running in pod kubia-bar-7fb8c797fb-j6g46
 
 volume是pod中能被多个容器访问的共享目录。volume被定义在pod上，然后被一个pod里的多个容器挂载到具体的文件目录下，与pod的生命周期相同，与容器的生命周期无关，当pod创建时会创建volome，当pod销毁时会销毁对应的volume。通过volume实现同一个pod中的不同容器之间的数据共享。
 
-![image-20200815143019291](D:\比翼\铸剑行动\k8s学习文档\image-20200815143019291.png)
+![image-20200815143019291](https://github.com/zcerhub/docker-k8s/raw/master/image/image-20200815143019291.png)
 
 常用的类型如下： 
 
