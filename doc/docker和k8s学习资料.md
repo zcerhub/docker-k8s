@@ -25,7 +25,7 @@
 
 ## **docker架构** 
 
-![image-20200817154845439](https://github.com/zcerhub/docker-k8s/raw/master/image/image-20200817154845439.png)
+![image-20200817154845439](../image/image-20200817154845439.png)
 
 - docker客户端和引擎 
 
