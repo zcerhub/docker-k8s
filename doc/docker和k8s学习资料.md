@@ -2165,13 +2165,13 @@ busybox   1/1     Running   0          38s
 
 ### pod
 
-![image-20200814150633102](D:\比翼\铸剑行动\k8s学习文档\image-20200814150633102.png)
+![image-20200814150633102](https://github.com/zcerhub/docker-k8s/raw/master/image/image-20200814150633102.png)
 
 pod是一组容器的集合，代表了k8s的基本调度单位。pod中多个业务容器共享pause容器的Ip，共享Pause容器挂载的volume，这解决了业务容器之间的通信和文件共享问题。
 
 将容器的镜像运行在多个pod中，而每个pod中只包含耦合紧密的容器。
 
-![image-20200814150831116](D:\比翼\铸剑行动\k8s学习文档\image-20200814150831116.png)
+![image-20200814150831116](https://github.com/zcerhub/docker-k8s/raw/master/image/image-20200814150831116.png)
 
 一个pod包含多个容器时，这些容器总是运行在同一个node，pod是绝不会跨越多个节点的。
 
@@ -2297,7 +2297,7 @@ kubia-liveness   1/1     Running   2          8m35s
 
 - TCP Socket探针，它打开一个TCP连接到容器的指定端口。如果连接已建立，则认为容器已经准备就绪。
 
-  ![image-20200814172203816](D:\比翼\铸剑行动\k8s学习文档\image-20200814172203816.png)
+  ![image-20200814172203816](https://github.com/zcerhub/docker-k8s/raw/master/image/image-20200814172203816.png)
 
 如果就绪探针的返回结果失败，则从该服务对应的Endpoint列表中删掉该pod的信息，如果准备就绪，会将其再次添加到Endpoint列表。
 
@@ -3364,7 +3364,7 @@ myclaim   Bound    pv0003   1Gi        RWO
 NAME     CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             STORAGECLASS   REASON   AGE
 pv0003   1Gi        RWO            Recycle          Bound    default/myclaim                           106m
 ```
-![image-20200815175642139](D:\比翼\铸剑行动\k8s学习文档\image-20200815175642139.png)
+![image-20200815175642139](https://github.com/zcerhub/docker-k8s/raw/master/image/image-20200815175642139.png)
 
 - 在pod中使用持久化卷声明
 
@@ -3515,13 +3515,13 @@ sleep-interval
 
 ### 安装nfs服务
 
-![image-20200815172033736](D:\比翼\铸剑行动\k8s学习文档\image-20200815172033736.png)
+![image-20200815172033736](https://github.com/zcerhub/docker-k8s/raw/master/image/image-20200815172033736.png)
 
 nfs用于同一网络中不同的主机通过nfs服务器共享目录。
 
-![image-20200815172135830](D:\比翼\铸剑行动\k8s学习文档\image-20200815172135830.png)需要通过RPC服务获取nfs server提供服务的端口，然后通过获取到的端口进行文件的操作。工作流程如下：
+![image-20200815172135830](https://github.com/zcerhub/docker-k8s/raw/master/image/image-20200815172135830.png)需要通过RPC服务获取nfs server提供服务的端口，然后通过获取到的端口进行文件的操作。工作流程如下：
 
-![image-20200815172313724](D:\比翼\铸剑行动\k8s学习文档\image-20200815172313724.png)
+![image-20200815172313724](https://github.com/zcerhub/docker-k8s/raw/master/image/image-20200815172313724.png)
 
 
 
@@ -3577,7 +3577,7 @@ df -Th
 
 ## kubectl中的命令
 
-![kubernetes-kubectl-cheatsheet](D:\比翼\铸剑行动\k8s学习文档\kubernetes-kubectl-cheatsheet.png)
+![kubernetes-kubectl-cheatsheet](https://github.com/zcerhub/docker-k8s/raw/master/image/kubernetes-kubectl-cheatsheet.png)
 
 
 
