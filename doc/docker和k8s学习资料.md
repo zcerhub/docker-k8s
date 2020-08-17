@@ -1746,7 +1746,7 @@ kubia-swfhp         1/1     Running   0          6m56s
 
 如下的demo中通过标签选择器将不同环境中的属于同一个应用的pod挑选出来：
 
-![image-20200817165421070](D:\code\docker-k8s\doc\image-20200817165421070.png)
+![image-20200817165421070](../image/image-20200817165421070.png)
 
 每个pod都有两个标签：
 
@@ -1756,7 +1756,7 @@ kubia-swfhp         1/1     Running   0          6m56s
 
 通过app=pc的标签可以选择出属于product  catalog微服务的pod
 
-![image-20200817165437630](D:\code\docker-k8s\doc\image-20200817165437630.png)
+![image-20200817165437630](../image/image-20200817165437630.png)
 
 ### Replication Controller 
 
