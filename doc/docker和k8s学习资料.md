@@ -1,4 +1,4 @@
-第一部分  docker初级
+# 第一部分  docker初级
 
 ## 什么是容器
 
@@ -2504,7 +2504,7 @@ NAME                              SCHEDULE             SUSPEND   ACTIVE   LAST S
 batch-job-every-fifteen-minutes   0,15,30,45 * * * *   False     1        19s             46s
 ```
 
-![image-20200814210342005](D:\code\docker-k8s\doc\image-20200814210342005.png)
+![image-20200814210342005](../image/image-20200814210342005.png)
 
 ### deployment
 
@@ -2612,7 +2612,7 @@ kubia-59d857b444   3         3         3       102s
 
 ##### 常用的更新应用零停机方案
 
-![image-20200817175822071](D:\code\docker-k8s\doc\image-20200817175822071.png)
+![image-20200817175822071](../image/image-20200817175822071.png)
 
 目前的service访问的是由RC管理v1版本的pod，将RC的template中容器的镜像的版本改为v2，然后先依次删掉v1版本的pod，当RC检测到目前的pod数不足时会通过template创建v2版本的pod。最终将所有的v1版本的pod都升级为v2.
 
@@ -3581,7 +3581,7 @@ df -Th
 
 
 
-## 第四部分kubernetes 高级
+# 第四部分kubernetes 高级
 
 ### k8s不同组件的原理
 
